@@ -62,13 +62,13 @@ def chatbot_shell():
             # Check the response
             if response.status_code == 200:
                 print(f"Rover 🛸: {response.text}")  # Customize based on API Gateway response structure
-            if response.status_code == 400:
+            elif response.status_code == 400:
                 print("Rover 🚨: Human error. Please check your input and try again.")
-            if response.status_code == 429:
+            elif response.status_code == 429:
                 print("Rover 🚨: Space travel is expensive! Please cough up more cash to continue.")
-            if response.status_code == 504:
+            elif response.status_code == 504:
                 print("Rover 🚨: Mars is far away. Looks like my answer got lost on the 140 million mile journey.")
-            if response.status_code ==500:
+            elif response.status_code == 500:
                 print("Rover 🚨: Houston, we have a problem. Please check my logs.")
             else:
                 print("Rover 🚨: Something went wrong. Unable to process your request.")
